@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="630.0" stylesheets="@../resource/TonysKinal.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ottonielmenendez.controller.LoginController">
+   <children>
+      <Pane prefHeight="462.0" prefWidth="630.0" style="-fx-background-color: #dcdcdc;">
+         <children>
+            <ImageView fitHeight="189.0" fitWidth="273.0" layoutX="-5.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Logo2.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="30.0" layoutY="29.0" prefWidth="194.0" text="Bienvenido">
+               <font>
+                  <Font name="Bookman Old Style" size="33.0" />
+               </font>
+            </Label>
+            <Pane layoutX="262.0" layoutY="22.0" prefHeight="419.0" prefWidth="340.0" style="-fx-background-color: #148DD9;">
+               <children>
+                  <TextField fx:id="txtUser" layoutX="90.0" layoutY="131.0" prefHeight="53.0" prefWidth="232.0" promptText=" User" style="-fx-background-color: transparente; -fx-border-color: ffffff; -fx-border-width: 0px 0px 2px 0px;">
+                     <font>
+                        <Font name="Bookman Old Style" size="20.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="txtPassword" layoutX="90.0" layoutY="241.0" prefHeight="53.0" prefWidth="232.0" promptText="  Password" style="-fx-background-color: transparente; -fx-border-color: ffffff; -fx-border-width: 0px 0px 2px 0px;">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </PasswordField>
+                  <Hyperlink layoutX="120.0" layoutY="382.0" onAction="#ventanaUsuario" text="¿No tienes cuenta?" textFill="#070707" />
+                  <Label layoutX="119.0" layoutY="29.0" prefHeight="45.0" prefWidth="115.0" text="Login">
+                     <font>
+                        <Font name="Bookman Old Style" size="37.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="64.0" fitWidth="54.0" layoutX="28.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/User.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="64.0" fitWidth="54.0" layoutX="28.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/Unlock.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btnLogin" layoutX="38.0" layoutY="332.0" mnemonicParsing="false" onAction="#sesion" prefHeight="39.0" prefWidth="264.0" styleClass="botonLogin" stylesheets="@../resource/Programador.css" text="Acceder">
+                     <font>
+                        <Font name="Bookman Old Style" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

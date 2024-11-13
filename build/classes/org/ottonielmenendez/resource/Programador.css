@@ -1,0 +1,57 @@
+#panelLabel{
+    -fx-background-size: 340 97;
+    -fx-background-radius: 20 20 18 18;
+    border-radius: 20px;
+    -fx-border-width:5;
+    -fx-background-color: #7c8494;
+}
+
+
+#panelLabel2{
+    -fx-background-size: 134 120;
+    -fx-background-radius: 20 20 18 18;
+    border-radius: 20px;
+    -fx-border-width:5;
+    -fx-background-color: #7c8494;
+}
+#panelLabel3{
+    -fx-background-size: 134 120;
+    -fx-background-radius: 20 20 18 18;
+    border-radius: 20px;
+    -fx-border-width:5;
+    -fx-background-color: #7c8494;
+}
+
+#panelLabel4{
+    -fx-background-size: 134 120;
+    -fx-background-radius: 20 20 18 18;
+    border-radius: 20px;
+    -fx-border-width:5;
+    -fx-background-color: #7c8494;
+}
+
+/* Estilos generales del botón */
+.botonLogin {
+    -fx-background-color: #3B9CD9;
+    -fx-color: #3B9CD9;
+    -fx-border: 4px;
+    -fx-border-radius: 4px;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 16px;
+    -fx-cursor: pointer;
+}
+
+/* Cambio de color al pasar el mouse sobre el botón */
+.botonLogin:hover {
+    -fx-background-color: #F2F2F2;
+}
+
+/* Cambio de color al hacer clic en el botón */
+.botonLogin:active {
+    -fx-background-color: #148DD9;
+}
+
+
+
+
+

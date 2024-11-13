@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteTipoPlatos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="447560d0-f09c-4a92-a79a-afe051dceafd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="RUTA_IMAGEN" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[call sp_ListarTipoPlatos]]>
+	</queryString>
+	<field name="codigoTipoPlato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcionTipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="83" splitType="Stretch">
+			<rectangle radius="20">
+				<reportElement x="0" y="0" width="572" height="79" backcolor="#000000" uuid="cdc5fe94-fe3b-4515-afd3-ab30479aaa8f"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="572" height="79" forecolor="#FFFFFF" uuid="5e899d8d-206c-445f-9fdc-0dbe1d33f002"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="26" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tipo Platos]]></text>
+			</staticText>
+			<image>
+				<reportElement x="20" y="0" width="100" height="79" uuid="041cfc49-b7ad-4763-b044-a32c2ed33346"/>
+				<imageExpression><![CDATA[$P{RUTA_IMAGEN}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="572" height="34" backcolor="#D99036" uuid="e6d11a84-18e6-4579-9a15-6e87d58a3208"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="2" width="131" height="32" uuid="ab66989b-d4ee-4795-9d33-7ba394f3e490"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Tipo Plato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="296" y="2" width="100" height="32" uuid="b0d662f8-1d2b-4517-bf05-e061a762a68d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement x="24" y="6" width="100" height="20" uuid="092b15b0-4862-476f-8c3b-36d48758bb5d"/>
+				<textElement>
+					<font fontName="Bookman Old Style"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoTipoPlato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="296" y="5" width="214" height="23" uuid="d209536e-bfde-4f64-a945-e5958461729a"/>
+				<textElement>
+					<font fontName="Bookman Old Style"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcionTipo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="331" y="32" width="241" height="22" uuid="55b9f111-b165-47a1-aed6-24f6113358e4"/>
+				<textElement>
+					<font fontName="Bookman Old Style" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Services - Food - Restaurant]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

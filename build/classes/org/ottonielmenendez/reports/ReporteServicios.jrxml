@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteServicios" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="867628b5-e253-4118-9f03-a138b6aa26c1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="RUTA_IMAGEN" class="java.lang.String"/>
+	<parameter name="codEmpresa" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from Empresas E Inner Join Servicios S on
+	E.codigoEmpresa = S.codigoEmpresa where E.codigoEmpresa = $P{codEmpresa}]]>
+	</queryString>
+	<field name="codigoEmpresa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoServicio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaServicio" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipoServicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaServicio" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lugarServicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoContacto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<rectangle radius="20">
+				<reportElement x="0" y="0" width="752" height="79" backcolor="#000000" uuid="acf47b1e-41fe-4ab5-be8d-5cb0772b343b"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="752" height="79" forecolor="#FFFFFF" uuid="f63da2d9-4861-42e0-b197-2e3b4881555e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="26"/>
+				</textElement>
+				<text><![CDATA[Servicios]]></text>
+			</staticText>
+			<image>
+				<reportElement x="19" y="0" width="100" height="79" uuid="9198ee85-2d9e-4f81-b685-d7b0a45feb31"/>
+				<imageExpression><![CDATA[$P{RUTA_IMAGEN}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="75">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="752" height="30" backcolor="#D99036" uuid="76080348-c115-49fb-9f83-ff00a03d658c"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="34" y="37" width="128" height="20" uuid="ec3200a2-0cc3-43d4-b71d-12823c7ba4e1"/>
+				<textElement>
+					<font fontName="Bookman Old Style"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEmpresa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="752" height="30" uuid="237b86e9-1ada-44b3-a785-0d1869b36fce"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="479" y="0" width="241" height="30" uuid="756e096b-979d-4380-91a0-67b5adbe74f9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono Empresa]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="620" y="37" width="100" height="20" uuid="984bc9dc-701c-4bd2-98d5-4f4b1bcd865a"/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="0" width="742" height="30" uuid="3150541d-0d04-4e19-a053-a614057f1e14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre de la Empresa]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="307" y="37" width="204" height="31" uuid="306fdec6-2c37-45de-ba98-3941f2fb9d72"/>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="752" height="34" backcolor="#D99036" uuid="4f12f2b1-3d8d-4b24-b324-147c679a6d3c"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="16" y="0" width="118" height="34" uuid="a5933302-527c-4920-9c7e-31c0b67a643e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="153" y="0" width="118" height="34" uuid="9675a5ef-1174-4d99-8ee2-2b49b944bd2c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="436" y="0" width="118" height="34" uuid="c1a07171-6e3d-433d-99d4-27a6f829c0fb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lugar Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="597" y="0" width="141" height="34" uuid="61c60a64-c990-4019-b253-8cb15b2af12c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono Contacto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="0" width="100" height="34" uuid="ffe7334f-d038-4532-9cdf-6683245f7386"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo Servicio]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="19" y="10" width="100" height="34" uuid="30e838e5-93c7-46b2-88b7-01f5234496ac"/>
+				<textElement>
+					<font fontName="Bookman Old Style"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaServicio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm a">
+				<reportElement x="172" y="10" width="82" height="20" uuid="2b1d3707-56c1-4af1-83f1-109613b8c1d4"/>
+				<textFieldExpression><![CDATA[$F{horaServicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="424" y="10" width="172" height="34" uuid="7b3f940c-5e00-4358-a274-2de2f327d764"/>
+				<textFieldExpression><![CDATA[$F{lugarServicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="625" y="10" width="100" height="20" uuid="7e0ef18c-85be-46b2-9307-cdbab1611efe"/>
+				<textFieldExpression><![CDATA[$F{telefonoContacto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="10" width="100" height="20" uuid="3483b370-a68c-4a05-bf8d-d3f49266f121"/>
+				<textFieldExpression><![CDATA[$F{tipoServicio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="511" y="32" width="241" height="22" uuid="17e003ba-a4f6-4932-9173-b0fd680b3fee"/>
+				<textElement>
+					<font fontName="Bookman Old Style" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Services - Food - Restaurant]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ottonielmenendez.controller.ReportePlatos">
+   <children>
+      <AnchorPane layoutX="-2.0" prefHeight="627.0" prefWidth="1062.0">
+         <children>
+            <Pane prefHeight="627.0" prefWidth="1065.0" style="-fx-background-color: #A67232;">
+               <children>
+                  <Pane layoutX="-7.0" layoutY="-10.0" prefHeight="639.0" prefWidth="224.0" style="-fx-background-color: #D99036;">
+                     <children>
+                        <ImageView fitHeight="112.0" fitWidth="97.0" layoutX="52.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Plato.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="29.0" layoutY="216.0" prefHeight="240.0" prefWidth="172.0">
+                           <children>
+                              <Button fx:id="btnReporte" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#generarReporte" prefHeight="42.0" prefWidth="171.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Reporte" textFill="WHITE">
+                                 <font>
+                                    <Font name="Bookman Old Style" size="17.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fx:id="imgReporte" fitHeight="37.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/Listar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <Label layoutX="41.0" layoutY="33.0" text="Platos" textFill="WHITE">
+                           <font>
+                              <Font name="Bookman Old Style" size="27.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="65.0" fitWidth="92.0" layoutX="21.0" layoutY="461.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/regresar.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <GridPane layoutX="235.0" layoutY="28.0" prefHeight="97.0" prefWidth="383.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="105.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="351.0" minWidth="10.0" prefWidth="195.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="47.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="47.0" valignment="CENTER" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <ComboBox fx:id="cmbTipoPlato" opacity="0.0" prefWidth="150.0" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="643.0" layoutY="28.0" prefHeight="97.0" prefWidth="383.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="105.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="351.0" minWidth="10.0" prefWidth="195.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="47.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="47.0" valignment="CENTER" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <ScrollPane layoutX="239.0" layoutY="78.0" prefHeight="444.0" prefWidth="801.0">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="447.0" prefWidth="1120.0">
+                           <children>
+                              <TableView fx:id="tblPlatos" layoutX="-1.0" layoutY="-7.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="459.0" prefWidth="1126.0" stylesheets="@../resource/TonysKinal.css">
+                                 <columns>
+                                    <TableColumn fx:id="colCodigoPlato" prefWidth="78.0" text="Cod. Plato" />
+                                    <TableColumn fx:id="colCantidad" prefWidth="97.0" text="Cantidad" />
+                                    <TableColumn fx:id="colNombrePlato" prefWidth="226.0" text="Nombre Plato" />
+                                    <TableColumn fx:id="colDescripcion" minWidth="0.0" prefWidth="483.0" text="Descripción Plato" />
+                                    <TableColumn fx:id="colPrecioPlato" minWidth="0.0" prefWidth="125.0" text="Precio Plato" />
+                                    <TableColumn fx:id="colCodigoTipoPlato" minWidth="0.0" prefWidth="118.0" text="Código Tipo Plato" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
